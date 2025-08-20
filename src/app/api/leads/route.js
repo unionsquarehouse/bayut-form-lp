@@ -17,8 +17,7 @@ export async function POST(request) {
       fields: {
         UF_CRM_DEAL_1652196828525: "Bayut Leads",
         UF_CRM_1749797976461: data.title || "Generic",
-        SOURCE_ID: "UC_MUHIOE",
-        UF_CRM_1752665936929: "40976",
+        SOURCE_ID: "UC_YJDI1J",
         PHONE: [
           {
             VALUE: data.phone,
