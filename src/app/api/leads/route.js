@@ -44,7 +44,7 @@ export async function POST(request) {
     }
 
     if (data.message) {
-      bitrixData.fields.UF_CRM_1663405913 = data.message;
+      bitrixData.fields.UF_CRM_LEAD_1686298805634 = data.message;
     }
 
     console.log(bitrixData, "bitrixData");

@@ -45,7 +45,7 @@ export default function HeroSection() {
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
-      preferredUnitType: formData.preferredUnitType,
+      message: formData.message,
     };
     console.log(leadData);
 
@@ -74,8 +74,7 @@ export default function HeroSection() {
             name: "",
             email: "",
             phone: "",
-            priceRange: "1M-2M AED",
-            bedrooms: "1",
+            message:""
           });
           setFormErrors({});
           setSubmitSuccess(false);
