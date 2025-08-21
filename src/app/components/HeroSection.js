@@ -149,8 +149,8 @@ export default function HeroSection() {
                     className=" inset-0 -z-10"
                   />
                 </div>
-                <h3 className="text-[1.5rem] 2xl:text-[2rem]  mb-4 xl:mb-8 text-white text-center">
-                  Bayut Project Leads
+                <h3 className="text-[2.5rem] 2xl:text-[3rem]  mb-4 xl:mb-8 text-white text-center">
+                  Project Leads
                 </h3>
 
                 <form
