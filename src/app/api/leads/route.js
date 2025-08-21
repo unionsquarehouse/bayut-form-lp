@@ -5,7 +5,7 @@ export async function POST(request) {
     const data = await request.json();
     
     // Validate required fields
-    if (!data.name || !data.email || !data.phone) {
+    if (!data.name || !data.email || !data.phone || !data.source) {
       return Response.json(
         { error: "Missing required fields" },
         { status: 400 }
@@ -17,7 +17,7 @@ export async function POST(request) {
       fields: {
         UF_CRM_DEAL_1652196828525: "Bayut Leads",
         UF_CRM_1749797976461: data.title || "Generic",
-        SOURCE_ID: "UC_YJDI1J",
+        SOURCE_ID: data.source ,
         PHONE: [
           {
             VALUE: data.phone,
@@ -48,7 +48,7 @@ export async function POST(request) {
     }
 
     console.log(bitrixData, "bitrixData");
-
+    
     // Axios POST request to Bitrix24
     const axiosResponse = await axios.post(
       process.env.BITRIX_ADD_LEADS_URL,

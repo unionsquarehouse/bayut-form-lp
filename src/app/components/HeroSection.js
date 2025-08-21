@@ -11,6 +11,7 @@ export default function HeroSection() {
     name: "",
     email: "",
     phone: "",
+    source: "",
     message: "",
   });
   const [formErrors, setFormErrors] = useState({});
@@ -45,6 +46,7 @@ export default function HeroSection() {
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
+      source: formData.source,
       message: formData.message,
     };
     console.log(leadData);
@@ -74,7 +76,8 @@ export default function HeroSection() {
             name: "",
             email: "",
             phone: "",
-            message:""
+            source: "",
+            message: "",
           });
           setFormErrors({});
           setSubmitSuccess(false);
@@ -92,7 +95,10 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen overflow-hidden bg-[url('/assets/hero-bg.jpg')] bg-cover bg-center ">
+    <section
+      id="hero"
+      className="relative min-h-screen overflow-hidden bg-[url('/assets/hero-bg.jpg')] bg-cover bg-center "
+    >
       {/* Overlay Gradient */}
       <div className="absolute inset-0 bg-black/50"></div>
       {/* Content Container - Match other sections */}
@@ -227,6 +233,34 @@ export default function HeroSection() {
                         } rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent text-white placeholder-gray-400 text-sm`}
                         placeholder="+971 50 123 4567"
                       />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="source"
+                      className="block text-xs xl:text-[1.1rem] text-white/80 mb-1 xl:mb-2 ml-1"
+                    >
+                      Source
+                    </label>
+                    <div className="relative">
+                      <select
+                        id="source"
+                        name="source"
+                        value={formData.source}
+                        onChange={handleChange}
+                        className={`w-full pl-4 pr-4 py-2 bg-white/10 border ${
+                          formErrors.source
+                            ? "border-red-500"
+                            : "border-white/20"
+                        } rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent text-white placeholder-black text-sm`}
+                      >
+                        <option value="" disabled>
+                          Select source
+                        </option>
+                        <option className="text-black" value="UC_IU4ROJ">Bayut Leads</option>
+                        <option className="text-black" value="UC_59XMT3">PF Leads</option>
+                      </select>
                     </div>
                   </div>
 
