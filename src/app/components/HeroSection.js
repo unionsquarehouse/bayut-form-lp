@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaUserAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import { FaUserAlt, FaEnvelope, FaPhoneAlt, FaGlobe } from "react-icons/fa";
 import { FaMessage } from "react-icons/fa6";
 
 export default function HeroSection() {
@@ -243,12 +243,15 @@ export default function HeroSection() {
                       Source
                     </label>
                     <div className="relative">
+                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                        <FaGlobe className="text-xs xl:text-[1.1rem]" />
+                      </div>
                       <select
                         id="source"
                         name="source"
                         value={formData.source}
                         onChange={handleChange}
-                        className={`w-full pl-4 pr-4 py-2 bg-white/10 border ${
+                        className={`w-full pl-10 pr-4 py-2 bg-white/10 border ${
                           formErrors.source
                             ? "border-red-500"
                             : "border-white/20"
@@ -257,8 +260,12 @@ export default function HeroSection() {
                         <option value="" disabled>
                           Select source
                         </option>
-                        <option className="text-black" value="UC_IU4ROJ">Bayut Leads</option>
-                        <option className="text-black" value="UC_59XMT3">PF Leads</option>
+                        <option className="text-black" value="UC_IU4ROJ">
+                          Bayut Leads
+                        </option>
+                        <option className="text-black" value="UC_59XMT3">
+                          PF Leads
+                        </option>
                       </select>
                     </div>
                   </div>
