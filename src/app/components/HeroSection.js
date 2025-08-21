@@ -134,8 +134,7 @@ export default function HeroSection() {
                   Thank You!
                 </h3>
                 <p className="text-xs xl:text-[1.1rem] text-gray-300">
-                  Your interest has been registered. Our team will contact you
-                  shortly.
+                  Lead has been submitted successfully.
                 </p>
               </div>
             ) : (
