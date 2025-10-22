@@ -9,7 +9,7 @@ export async function POST(request) {
     const bitrixData = {
       fields: {
         UF_CRM_1749797976461: data?.projectName || "Generic",
-        SOURCE_ID: "UC_MUHIOE" ,
+        SOURCE_ID: data?.source,
         PHONE: [
           {
             VALUE: data?.phone,
