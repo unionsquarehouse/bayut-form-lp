@@ -3,12 +3,13 @@ import axios from "axios";
 export async function POST(request) {
   try {
     const data = await request.json();
+    console.log(data, "data");
     
     // Prepare the data for Bitrix24 API
     const bitrixData = {
       fields: {
-        UF_CRM_1749797976461: data?.title || "Generic",
-        SOURCE_ID: data?.source ,
+        UF_CRM_1749797976461: data?.projectName || "Generic",
+        SOURCE_ID: "UC_MUHIOE" ,
         PHONE: [
           {
             VALUE: data?.phone,
@@ -29,6 +30,25 @@ export async function POST(request) {
     if (data.interest) {
       bitrixData.fields.UF_CRM_1666273404 = data.interest;
     }
+    if (data.timeToInvest) {
+      bitrixData.fields.UF_CRM_1761134513560 = data.timeToInvest;
+    }
+
+    if (data.residency) {
+      bitrixData.fields.UF_CRM_626BC0D089972 = data.residency;
+    }
+
+    if (data.budget) {
+      bitrixData.fields.UF_CRM_62289FBA5DAFD = data.budget;
+    }
+
+    if (data.residency) {
+      bitrixData.fields.UF_CRM_626BC0D089972 = data.residency;
+    }
+
+    if (data.developer) {
+      bitrixData.fields.UF_CRM_1761134327531 = data.developer;
+    }
 
     if (data.preferredContact) {
       bitrixData.fields.UF_CRM_1749797214 = data.preferredContact;
@@ -39,6 +59,7 @@ export async function POST(request) {
     }
 
     console.log(bitrixData, "bitrixData");
+    
 
     // Axios POST request to Bitrix24
     const axiosResponse = await axios.post(
