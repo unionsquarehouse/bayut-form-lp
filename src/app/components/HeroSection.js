@@ -261,10 +261,10 @@ export default function HeroSection() {
                           Select source
                         </option>
                         <option className="text-black" value="UC_IU4ROJ">
-                          Bayut Leads
+                          Bayut Campaign
                         </option>
                         <option className="text-black" value="UC_59XMT3">
-                          PF Leads
+                          PF Campaign
                         </option>
                       </select>
                     </div>
